@@ -13,24 +13,22 @@ btwn the target and source paths and have
 """
 Step 1: Import modules and get CWD & predecesors
 """
-import os
+import os, sys
 import pandas as pd
 import requests
 import io
 
-cwd = os.getcwd()
-fileDir = os.path.dirname(os.path.abspath(cwd))
+fileDir = os.path.abspath(os.path.dirname(sys.argv[0]))
 parentDir = os.path.dirname(fileDir)
 gparentDir = os.path.dirname(parentDir)
 
-#print(cwd)
-#print(fileDir)
+print(fileDir)
 #print(parentDir)
 #print(gparentDir)
 
 #%% Step 2: Read in ticker config file - list of tickers
-filepath = r'data\001-vanguard_etf_list\cln\etf_list.csv'
-filename = os.path.join(gparentDir, filepath)
+filepath = r'data/001-vanguard_etf_list/cln/etf_list.csv'
+filename = os.path.join(fileDir, filepath)
 
 colnames = ['ticker', 'name', 'asset_class', 'subclass']
 data = pd.read_csv(filename, names=colnames, encoding = 'ISO-8859-1')
@@ -38,9 +36,10 @@ data = pd.read_csv(filename, names=colnames, encoding = 'ISO-8859-1')
 tickers = data.ticker.tolist()
 del tickers[0]
 
-#print(filename)
-#print(data)
-#print(tickers)
+print(tickers[1:10])
+print(filename)
+print(data)
+print(tickers)
 
 #%% Step 3: Build master Adj. Close DataFrame
 dt1 = "20110131"
