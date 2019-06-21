@@ -1,0 +1,60 @@
+ticker,name,asset_class,subclass
+EDV,Extended Duration Treasury ETF,U.S. bond ETFs ,Treasury/Agency
+BIV,Intermediate-Term Bond ETF,U.S. bond ETFs ,Treasury/Agency
+VGIT,Intermediate-Term Treasury ETF,U.S. bond ETFs ,Treasury/Agency
+BLV,Long-Term Bond ETF,U.S. bond ETFs ,Treasury/Agency
+VGLT,Long-Term Treasury ETF,U.S. bond ETFs ,Treasury/Agency
+VMBS,Mortgage-Backed Securities ETF,U.S. bond ETFs ,Treasury/Agency
+BSV,Short-Term Bond ETF,U.S. bond ETFs ,Treasury/Agency
+VTIP,Short-Term Inflation-Protected Securities ETF,U.S. bond ETFs ,Treasury/Agency
+VGSH,Short-Term Treasury ETF,U.S. bond ETFs ,Treasury/Agency
+BND,Total Bond Market ETF,U.S. bond ETFs ,Treasury/Agency
+VCIT,Intermediate-Term Corporate Bond ETF,U.S. bond ETFs ,Investment-grade
+VCLT,Long-Term Corporate Bond ETF,U.S. bond ETFs ,Investment-grade
+VCSH,Short-Term Corporate Bond ETF,U.S. bond ETFs ,Investment-grade
+VTC,Total Corporate Bond ETF,U.S. bond ETFs ,Investment-grade
+VTEB,Tax-Exempt Bond ETF,U.S. bond ETFs ,Tax-exempt
+VIG,Dividend Appreciation ETF,U.S. stock ETFs ,Large-cap
+ESGV,ESG U.S. Stock ETF,U.S. stock ETFs ,Large-cap
+VUG,Growth ETF,U.S. stock ETFs ,Large-cap
+VYM,High Dividend Yield ETF,U.S. stock ETFs ,Large-cap
+VV,Large-Cap ETF,U.S. stock ETFs ,Large-cap
+MGC,Mega Cap ETF,U.S. stock ETFs ,Large-cap
+MGK,Mega Cap Growth ETF,U.S. stock ETFs ,Large-cap
+MGV,Mega Cap Value ETF,U.S. stock ETFs ,Large-cap
+VOO,S&P 500 ETF,U.S. stock ETFs ,Large-cap
+VTI,Total Stock Market ETF,U.S. stock ETFs ,Large-cap
+VTV,Value ETF,U.S. stock ETFs ,Large-cap
+VXF,Extended Market ETF,U.S. stock ETFs ,Mid-cap
+VOO,Mid-Cap ETF,U.S. stock ETFs ,Mid-cap
+VOT,Mid-Cap Growth ETF,U.S. stock ETFs ,Mid-cap
+VOE,Mid-Cap Value ETF,U.S. stock ETFs ,Mid-cap
+VB,Small-Cap ETF,U.S. stock ETFs ,Small-cap
+VBK,Small-Cap Growth ETF,U.S. stock ETFs ,Small-cap
+VBR,Small-Cap Value ETF,U.S. stock ETFs ,Small-cap
+BNDW,Total World Bond ETF,International bond ETFs ,Global
+BNDX,Total International Bond ETF,International bond ETFs ,International
+VWOB,Emerging Markets Government Bond ETF,International bond ETFs ,Emerging markets
+VT,Total World Stock ETF,International stock ETFs ,Global
+VSGX,ESG International Stock ETF,International stock ETFs ,International
+VEU,FTSE All-World ex-US ETF,International stock ETFs ,International
+VSS,FTSE All-World ex-US Small-Cap ETF,International stock ETFs ,International
+VEA,FTSE Developed Markets ETF,International stock ETFs ,International
+VGK,FTSE Europe ETF,International stock ETFs ,International
+VPL,FTSE Pacific ETF,International stock ETFs ,International
+VNQI,Global ex-U.S. Real Estate ETF,International stock ETFs ,International
+VIGI,International Dividend Appreciation ETF,International stock ETFs ,International
+VYMI,International High Dividend Yield ETF,International stock ETFs ,International
+VXUS,Total International Stock ETF,International stock ETFs ,International
+VWOB,FTSE Emerging Markets ETF,International stock ETFs ,Emerging markets
+VOX,Communication Services ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VCR,Consumer Discretionary ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VDC,Consumer Staples ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VDE,Energy ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VFH,Financials ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VHT,Health Care ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VIS,Industrials ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VGT,Information Technology ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VAW,Materials ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VNQ,Real Estate ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
+VPU,Utilities ETF,Sector & specialty ETFs ,Sector & specialty ETFs 
