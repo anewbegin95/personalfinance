@@ -61,9 +61,13 @@ for ticker in tickers[0:10]:
         else:
             adjCloseDict[ticker] = urlCloseList
 # print(adjCloseDict)
-# %% Clean / process data
-for data in my_empty_dict:
-    clean_the_data()
-
-# %% Combine
-master_data = combine_individual_data()
+# %% Next steps
+# Convert data in adjusted close frame to % change from previous time period
+# Bring Fama French Factor Data into a dataframe
+# Cleanse FF5F data and convert to decimals
+# Convert % change to % excess return using RF rate for period
+# Append a single Int column with "1" val
+# Run multivariable regression against each adj close colum w/ adj close as Y and FF5F as X
+# Calculate Cost of Equity using avg of each coeff * each unique coeff + rfr (annualized)
+# Create covariance table of each adj return column vs every other adj return column
+# Optimize portfolio extected risk/return using COE and changes in # of share investments in securities
