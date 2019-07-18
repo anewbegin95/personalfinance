@@ -55,14 +55,19 @@ for ticker in tickers[0:10]:
 
 #    print(urlCloseList[0:5])
 
-    for key in adjCloseDict.keys():
-        if ticker != key:
-            next
-        else:
-            adjCloseDict[ticker] = urlCloseList
-# print(adjCloseDict)
+#    for key in adjCloseDict.keys():
+#        if ticker != key:
+#            next
+#        else:
+    adjCloseDict[ticker] = urlCloseList
+#%%
+print(adjCloseDict)
 # %% Next steps
-# Convert data in adjusted close frame to % change from previous time period
+# %%Convert data in adjusted close frame to % change from previous time period
+    # Convert each list to a pandas data series
+    # Iterate over each series using .pct_change() to get % difference
+    # Reverse order of list (?)
+
 # Bring Fama French Factor Data into a dataframe
 # Cleanse FF5F data and convert to decimals
 # Convert % change to % excess return using RF rate for period
