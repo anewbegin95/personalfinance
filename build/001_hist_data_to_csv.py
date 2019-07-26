@@ -5,9 +5,11 @@
 
 import os
 import sys
+import datetime as dt
 import pandas as pd
 import requests
 import io
+import csv
 
 fileDir = os.path.abspath(os.path.dirname(sys.argv[0]))
 parentDir = os.path.dirname(fileDir)
@@ -32,9 +34,18 @@ print(filename)
 print(data)
 print(tickers)
 
-# %% Step 3: Build ticker dictionary
-dt1 = "20110131"
-dt2 = "20190531"
+# %% Step 3: Create Unix Timestamps - MAKE DATES ONE DAY AFTER DESIRED DATE
+dt1 = dt.date(2011, 1, 2)
+dt1_unix = (dt1 - dt.date(1970, 1, 1)).total_seconds()
+dt1_chk = dt.date.fromtimestamp(dt1_unix)
+dt2 = dt.date(2019, 6, 2)
+dt2_unix = (dt2 - dt.date(1970, 1, 1)).total_seconds()
+dt2_chk = dt.date.fromtimestamp(dt2_unix)
+
+# print(dt1_unix, dt2_unix)
+# print(dt1_chk, dt2_chk)
+
+# %% Step 4: Build ticker dictionary
 ticker_dict = {"Date": pd.date_range(start=dt1, end=dt2, freq='M')[::-1],
                "A": tickers
                }
@@ -42,16 +53,16 @@ adjCloseDict = dict.fromkeys(tickers)
 # print(ticker_dict)
 print(adjCloseDict)
 
-# %% Step 4: Download data and zip to dictionary
+# %% Step 5: Download data and zip to dictionary
 
-for ticker in tickers[0:10]:
-    url = r'https://stooq.com/q/d/l/?s=%s.us&d1=%s&d2=%s&i=m&o=1100000' \
-           % (ticker, dt1, dt2)
+for ticker in tickers:
+    url = r'https://query1.finance.yahoo.com/v7/finance/download/%s?period1=%s&period2=%s&interval=1mo&events=history&crumb=BvBXlrp3XGx' \
+           % (ticker, dt1_unix, dt2_unix)
 
     urlReq = requests.get(url).content
-    urlData = pd.read_csv(io.StringIO(urlReq.decode('utf-8')))
-
-    urlCloseList = urlData['Close'].tolist()
+    urlData = pd.read_csv(io.StringIO(urlReq.decode('utf-8')), sep="\n", error_bad_lines=False)
+    print(urlData.head())
+    urlCloseList = urlData['Adj Close'].tolist()
 
 #    print(urlCloseList[0:5])
 
