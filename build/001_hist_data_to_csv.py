@@ -8,7 +8,6 @@ import sys
 from datetime import datetime
 import pandas as pd
 import requests
-import io
 from pandas_datareader import data
 from bs4 import BeautifulSoup
 import re
@@ -24,7 +23,7 @@ gparentDir = os.path.dirname(parentDir)
 
 # %% Step #: Read in ticker config file - list of tickers
 filepath = r'data/001-vanguard_etf_list/cln/etf_list.csv'
-filename = os.path.join(fileDir, filepath)
+filename = os.path.join(parentDir, filepath)
 
 colnames = ['ticker', 'name', 'asset_class', 'subclass']
 data = pd.read_csv(filename, names=colnames, encoding='ISO-8859-1')
@@ -72,7 +71,7 @@ def _get_crumbs_and_cookies(stock):
         crumb = re.findall('"CrumbStore":{"crumb":"(.+?)"}', str(soup))
 
         return (header, crumb[0], website.cookies)
-
+    
 # %% Step #: converts date to unix timestamp
 #            parameters: date - in format (dd-mm-yyyy)
 #            returns integer unix timestamp
@@ -83,16 +82,14 @@ def convert_to_unix(date):
     datum = datetime.strptime(date, '%d-%m-%Y')
 
     return int(mktime(datum.timetuple()))
-# %% Step #:  queries yahoo finance api to receive historical data in csv frmt
-"""
-parameters:
-    stock - short-handle identifier of the company
-    interval - 1d, 1wk, 1mo - daily, weekly monthly data
-    day_begin - starting date for the historical data (format: dd-mm-yyyy)
-    day_end - final date of the data (format: dd-mm-yyyy)
-returns: a list of comma seperated value lines
-"""
 
+# %% Step #:  queries yahoo finance api to receive historical data in csv frmt
+#             stock - short-handle identifier of the company
+#             interval - 1d, 1wk, 1mo - daily, weekly monthly data
+#             day_begin - starting date for the hist. data (format: dd-mm-yyyy)
+#             day_end - final date of the data (format: dd-mm-yyyy)
+#             returns: a list of comma seperated value lines
+    
 
 def load_csv_data(stock,
                   interval='1mo',
@@ -123,7 +120,7 @@ def load_csv_data(stock,
         return website.text.split('\n')[:-1]
 # %% Step 5: Download data and zip to dictionary
 for ticker in tickers:
-    adjCloseDict[ticker] = load_csv_data(ticker)['Adj Close']
+    adjCloseDict[ticker] = load_csv_data(ticker)[int(0)]['Adj Close']
 # %%
 print(adjCloseDict)
 # %% Next steps
